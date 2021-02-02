@@ -1,0 +1,15 @@
+Inventory 
+
+ create table Inventory(
+ ProductId varchar(10) not null, foreign key(ProductId) references Product(ProductId),
+StoreId varchar(10) not null, foreign key (StoreId) references Store(StoreId),
+QTY  long not null );
+
+Agent-Store-Role
+
+ create table AgentStoreRole(
+ AgentId INT not null  AUTO_INCREMENT , foreign key(AgentId) references agent(AgentId),
+ StoreId varchar(10) NOT NULL, foreign key (StoreId) references Store(StoreId),
+ Role  ENUM ('AGENT', 'VIEW'));
+
+
